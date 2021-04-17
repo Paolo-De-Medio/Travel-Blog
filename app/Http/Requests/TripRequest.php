@@ -24,9 +24,9 @@ class TripRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|min:5|max:15',
+            'name'=>'required|min:3|max:35',
             'img'=>'required|image',
-            'description'=>'required|min:50|max:255',
+            'description'=>'required|min:30|max:255',
             'destination'=>'required|min:3|max:10'
         ];
     }

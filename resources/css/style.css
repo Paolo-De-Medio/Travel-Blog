@@ -1,0 +1,176 @@
+*{
+  box-sizing: border-box;
+  margin: 0%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+  background-color: var(--main-color);
+}
+
+h1, h2, h3, h4{
+  font-family: 'Nunito', sans-serif;
+}
+
+/* COLORS */
+:root{
+  --main-color: #28262C;
+  --accent-color: #F2542D;
+  --second-color: #F7F4F3;
+  --blue: #00A5E0;
+}
+
+.bg-main{
+  background-color: var(--main-color);
+}
+
+.bg-accent{
+  background-color: var(--accent-color);
+}
+
+.bg-second{
+  background-color: var(--second-color);
+}
+
+.bg-blue{
+  background-color: var(--blue);
+}
+
+.tc-main{
+  color: var(--main-color);
+}
+
+.tc-accent{
+  color: var(--accent-color);
+}
+
+.tc-second{
+  color: var(--second-color);
+}
+
+.tc-blue{
+  color: var(--blue);
+}
+
+/* NAVBAR */
+
+.font-brand{
+  font-family: 'Nunito', sans-serif;
+  z-index: 2;
+}
+
+.bg-custom{
+  background-color: #28262cc4;
+}
+
+
+
+/* HEADER-MASTHEAD*/
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('/img/italy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+header .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  .custom-title{
+    z-index: 2;
+  }
+
+  /* BACKGROUNDS LANDSCAPES */
+  .bg-landscape-register{
+    background-image: url('/img/italy2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-landscape-login{
+    background-image: url('/img/prague.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-landscape-contacts{
+    background-image: url('/img/india.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-landscape-createArticle{
+    background-image: url('/img/negombo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-landscape-createTrip{
+    background-image: url('/img/venice.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* AVATAR THUMBNAIL */
+
+  .avatar {
+    border: 4px solid var(--accent-color);
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+
+  .avatar-1{
+    background: url('/img/thumbnail.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .avatar-2{
+    background: url('/img/thumbnail2.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  .avatar-3{
+    background: url('/img/thumbnail3.jpeg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* AVATAR MESSAGE */
+
+  .message{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 3px 5px 5px 3px rgba(0, 0, 0, 0.466);
+  }
+
+  /* BUTTONS */
+  .contact-button{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    padding: 5px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  .form-border{
+    border-radius: 15px;
+  }
