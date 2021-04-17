@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center mt-5">
-                <h1>Aggiungi una destinazione</h1>
+                <h1>Add a destination</h1>
             </div>
         </div>
     </div>
@@ -23,22 +23,22 @@
                 <form method="POST" action="{{route('trip.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nome Inserzionista</label>
+                        <label for="exampleInputEmail1" class="form-label">Full Name</label>
                         <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Destinazione</label>
+                      <label for="exampleInputEmail1" class="form-label">Destination</label>
                       <input name="destination" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Foto</label>
+                        <label for="exampleInputEmail1" class="form-label">Photo</label>
                         <input name="img" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
-                        <label for="exampleInputText1" class="form-label">Inserisci la descrizione</label>
+                        <label for="exampleInputText1" class="form-label">Description</label>
                         <textarea name="description" id="exampleInputText1" cols="30" rows="5"></textarea>
                       </div>
-                    <button type="submit" class="btn btn-primary">Pubblica</button>
+                    <button type="submit" class="btn btn-primary">Post</button>
                   </form>
             </div>
         </div>

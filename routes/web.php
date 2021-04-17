@@ -17,6 +17,8 @@ use App\Http\Controllers\PubblicController;
 */
 
 Route::get('/', [PubblicController::class, 'home'])->name('welcome');
+Route::get('/contacts', [PubblicController::class, 'contactForm'])->name('contacts');
+Route::post('/contacts/submit', [PubblicController::class, 'submit'])->name('contacts.submit');
 Route::get('/trip/index', [TripController::class, 'index'])->name('trip.index');
 Route::get('/trip/create', [TripController::class, 'create'])->name('trip.create');
 Route::post('/trip/store', [TripController::class, 'store'])->name('trip.store');

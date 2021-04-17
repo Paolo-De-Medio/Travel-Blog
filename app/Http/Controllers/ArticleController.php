@@ -8,6 +8,12 @@ use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
+
+    public function __constructor(){
+
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
