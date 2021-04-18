@@ -34,7 +34,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Hi, {{Auth::user()->name}}
+              Hi, <span class="tc-accent">{{Auth::user()->name}}</span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="{{route('trip.create')}}">Add destination</a></li>

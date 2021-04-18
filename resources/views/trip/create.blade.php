@@ -35,9 +35,10 @@
                             <label for="exampleInputEmail1" class="form-label tc-second">Photo</label>
                             <input name="img" type="file" class="form-control" id="exampleInputEmail1" placeholder="upload image">
                           </div>
+
+                          <label for="exampleInputText1" class="form-label tc-second">Description</label>
                           <div class="mb-3">
-                            <label for="exampleInputText1" class="form-label tc-second">Description</label>
-                            <textarea name="description" id="exampleInputText1" cols="30" rows="5" placeholder="write here..."></textarea>
+                            <textarea name="description" id="exampleInputText1" cols="55" rows="5" placeholder="write here..."></textarea>
                           </div>
                         <button type="submit" class="btn contact-button">Post</button>
                       </form>

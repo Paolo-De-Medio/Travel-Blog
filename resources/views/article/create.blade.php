@@ -20,7 +20,7 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 offset-md-3 my-5 p-5 bg-accent form-border">
+                <div class="card col-12 col-md-6 offset-md-3 my-5 p-5 bg-accent form-border">
                     <form method="POST" action="{{route('article.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
@@ -31,9 +31,10 @@
                             <label for="exampleInputEmail1" class="form-label tc-second">Photo</label>
                             <input name="img" type="file" class="form-control" id="exampleInputEmail1" placeholder="upload image">
                           </div>
+
+                          <label for="exampleInputText1" class="form-label tc-second">Description</label>
                           <div class="mb-3">
-                            <label for="exampleInputText1" class="form-label tc-second">Description</label>
-                            <textarea name="description" id="exampleInputText1" cols="30" rows="5" placeholder="Write here..."></textarea>
+                            <textarea name="description" id="exampleInputText1" cols="55" rows="5" placeholder="Write here..."></textarea>
                           </div>
                         <button type="submit" class="btn contact-button">Post</button>
                       </form>

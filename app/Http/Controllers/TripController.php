@@ -60,7 +60,7 @@ class TripController extends Controller
      */
     public function show(Trip $trip)
     {
-        //
+        return view('trip.detail', compact('trip'));
     }
 
     /**
@@ -71,7 +71,7 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
-        return view ('trip.detail', compact('trip'));
+
     }
 
     /**

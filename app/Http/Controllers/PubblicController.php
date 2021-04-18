@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PubblicController extends Controller
 {
@@ -27,7 +29,7 @@ class PubblicController extends Controller
 
         Mail::to($email)->send(new ContactMail($contact));
 
-        return redirect(route('homepage'))->with('message','La tua richiesta è stata inoltrata!');
+        return redirect(route('welcome'))->with('message','La tua richiesta è stata inoltrata!');
 
     }
 }

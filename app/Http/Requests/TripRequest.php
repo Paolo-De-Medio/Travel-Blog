@@ -27,7 +27,7 @@ class TripRequest extends FormRequest
             'name'=>'required|min:3|max:35',
             'img'=>'required|image',
             'description'=>'required|min:30|max:255',
-            'destination'=>'required|min:3|max:10'
+            'destination'=>'required|min:3|max:30'
         ];
     }
 }
