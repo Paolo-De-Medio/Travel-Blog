@@ -28,3 +28,15 @@ Route::get('/article/create', [ArticleController::class, 'create'])->name('artic
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
 Route::get('/article/create/detail/{article}', [ArticleController::class, 'show'])->name('article.detail');
 
+Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
+Route::put('/article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
+Route::delete('/article/delete/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
+
+Route::get('/trip/edit/{trip}', [TripController::class, 'edit'])->name('trip.edit');
+Route::put('/trip/update/{trip}', [TripController::class, 'update'])->name('trip.update');
+Route::delete('/trip/delete/{trip}', [TripController::class, 'destroy'])->name('trip.destroy');
+
+Route::get('/article/auth/{auth}', [ArticleController::class, 'auth'])->name('article.auth');
+Route::get('/trip/auth/{auth}', [TripController::class, 'auth'])->name('trip.auth');
+
+

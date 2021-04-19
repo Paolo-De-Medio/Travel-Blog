@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row background-custom">
             <div class="col-12 text-center my-4 tc-second">
-                <h1>{{$article->name}}</h1>
+                <h1>Details about this article</h1>
             </div>
         </div>
     </div>
@@ -14,9 +14,18 @@
                     <div class="card-img-overlay"></div>
                   </div>
                   <a href="{{route('article.index')}}" class="btn detail-button my-5">Back to articles</a>
+                  @if ($article->user->id == Auth::id())
+                    <a href="{{route('article.edit', compact('article'))}}" class="btn detail-button my-5">Edit</a>
+                    <form method="POST" action="{{route('article.destroy', compact('article'))}}">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                  @endif
+
             </div>
             <div class="col-12 col-md-7 tc-second">
-                <h3 class="tc-accent">Details about this article <i class="fas fa-asterisk fs-5"></i></h3>
+                <h3 class="tc-accent">{{$article->name}}</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui vel repudiandae reprehenderit. Sequi ea tenetur placeat enim! Vero reprehenderit rem atque veritatis perferendis nisi cumque praesentium, porro adipisci. Pariatur, nobis.</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur harum, labore necessitatibus</p>
                 <hr class="tc-accent">

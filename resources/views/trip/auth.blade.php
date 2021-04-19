@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row background-custom">
             <div class="col-12 text-center my-4 tc-second">
-                <h1 class="fw-bold">Destinations available</h1>
+                <h1>All the destinations posted by {{$user->name}}</h1>
             </div>
         </div>
     </div>
@@ -25,5 +25,11 @@
             @endforeach
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <a href="{{route('article.index')}}" class="btn detail-button">Back to all the trips</a>
+            </div>
+        </div>
     </div>
 </x-layout>

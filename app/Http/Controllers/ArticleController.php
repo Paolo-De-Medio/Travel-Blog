@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
 
-    public function __constructor(){
+    public function __construct(){
 
         $this->middleware('auth');
     }
@@ -47,6 +49,7 @@ class ArticleController extends Controller
             'name'=>$request->input('name'),
             'description'=>$request->input('description'),
             'img'=>$request->file('img')->store('public/img'),
+            'user_id'=> Auth::id(),
         ]);
 
         return redirect (route('article.index'));
@@ -71,7 +74,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('article.edit', compact('article'));
     }
 
     /**
@@ -83,7 +86,16 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article->name = $request->name;
+        $article->description = $request->description;
+        
+        if($request->img){
+            $article->img = $request->file('img')->store('public/img');
+        }
+
+        $article->save();
+
+        return redirect(route('article.index'));
     }
 
     /**
@@ -94,6 +106,18 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+
+        return redirect(route('article.index'));
+    }
+
+
+    public function auth($auth){
+
+        $articles = Article::where('user_id', $auth)->get();
+
+        $user = User::find($auth);
+        
+        return view('article.auth', compact('articles', 'user'));
     }
 }

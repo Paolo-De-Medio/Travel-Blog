@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trip;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\TripRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TripController extends Controller
 {
 
-    public function __constructor(){
+    public function __construct(){
 
         $this->middleware('auth');
     }
@@ -43,7 +45,7 @@ class TripController extends Controller
     public function store(TripRequest $request)
     {
         $trip = Trip::create([
-            'name'=>$request->input('name'),
+            'user_id'=>Auth::id(),
             'destination'=>$request->input('destination'),
             'img'=>$request->file('img')->store('public/img'),
             'description'=>$request->input('description')
@@ -71,7 +73,7 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
-
+        return view('trip.edit', compact('trip'));
     }
 
     /**
@@ -83,7 +85,16 @@ class TripController extends Controller
      */
     public function update(Request $request, Trip $trip)
     {
-        //
+        $trip->name = $request->name;
+        $trip->description = $request->description;
+        
+        if($request->img){
+            $trip->img = $request->file('img')->store('public/img');
+        }
+
+        $trip->save();
+
+        return redirect(route('trip.index'));
     }
 
     /**
@@ -94,6 +105,19 @@ class TripController extends Controller
      */
     public function destroy(Trip $trip)
     {
-        //
+        $trip->delete();
+
+        return redirect(route('trip.index'));
+    }
+
+
+    public function auth($auth){
+
+        $trips = Trip::where('user_id', $auth)->get();
+
+        $user = User::find($auth);
+
+        return view('trip.auth', compact('trips', 'user'));
+        
     }
 }

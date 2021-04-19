@@ -2,21 +2,17 @@
     <div class="bg-landscape-login">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mt-5">
-                    <h1 class="tc-accent fw-bold">Login <i class="far fa-user"></i></h1>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 offset-md-3 my-4 p-5 bg-accent form-border">
+                <div class="col-12 col-md-6 offset-md-3 mt-5 p-5 bg-accent form-border">
                     <form method="POST" action="{{route('login')}}">
                         @csrf
+                        <div class="mb-3 text-center">
+                            <h1 class="tc-second fw-bold">Login <i class="far fa-user"></i></h1>
+                        </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label tc-second">Email Address</label>
                             <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Your email address here">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label tc-second">Password</label>
                             <input name="password" type="password" class="form-control" id="exampleInputEmail1" placeholder="Your password here">
                         </div>

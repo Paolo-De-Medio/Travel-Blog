@@ -30,16 +30,20 @@
             <a class="nav-link" href="{{route('article.index')}}">Articles</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('trip.create')}}">Add destination</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('article.create')}}">Add your article</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('contacts')}}">Contacts</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Hi, <span class="tc-accent">{{Auth::user()->name}}</span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="{{route('trip.create')}}">Add destination</a></li>
-              <li><a class="dropdown-item" href="{{route('article.create')}}">Add your article</a></li>
-              <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Logout</a></li>
+            <ul class="dropdown-menu bg-main" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item tc-second" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Logout</a></li>
               <form method="POST" action="{{route('logout')}}" id="form-logout" style="display: none">
                 @csrf
             </form>
