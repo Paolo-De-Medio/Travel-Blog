@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row background-custom">
             <div class="col-12 text-center my-4 tc-second">
-                <h1 class="fw-bold">All our articles</h1>
+                <h1>All our articles</h1>
             </div>
         </div>
     </div>

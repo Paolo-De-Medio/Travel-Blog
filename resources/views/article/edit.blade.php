@@ -18,7 +18,7 @@
                         @csrf
                         @method('put') 
                         <div class="text-center tc-second mb-4">
-                            <h2 class="fw-bold">Edit this article <i class="far fa-edit"></i></h2>
+                            <h2>Edit this article <i class="far fa-edit"></i></h2>
                         </div>                     
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label tc-second">Title</label>
@@ -34,6 +34,7 @@
                             <textarea name="description" id="exampleInputText1" cols="55" rows="5" placeholder="Write here...">{{$article->description}}</textarea>
                           </div>
                         <button type="submit" class="btn contact-button">Update</button>
+                        <a href="{{route('article.detail', compact('article'))}}" class="btn contact-button ms-3">Cancel</a>
                       </form>
                 </div>
             </div>

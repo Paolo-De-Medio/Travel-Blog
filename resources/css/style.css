@@ -102,6 +102,14 @@ header .overlay {
   }
 
   /* BACKGROUNDS LANDSCAPES */
+
+  /* .main-background{
+    background-image: url('/img/main-background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  } */
+
   .bg-landscape-register{
     background-image: url('/img/italy2.jpg');
     background-repeat: no-repeat;

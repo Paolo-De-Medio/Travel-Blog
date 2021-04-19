@@ -13,15 +13,17 @@
                     <img src="{{Storage::url($trip->img)}}" class="card-img" alt="...">
                     <div class="card-img-overlay"></div>
                   </div>
-                  <a href="{{route('trip.index')}}" class="btn detail-button my-5">Back to trips</a>
-                  @if ($trip->user->id == Auth::id())
-                    <a href="{{route('trip.edit', compact('trip'))}}" class="btn detail-button my-5">Edit</a>
-                    <form method="POST" action="{{route('trip.destroy', compact('trip'))}}">
-                        @method('delete')
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>  
-                  @endif
+                  <div class="d-flex align-items-center justify-content-between">
+                    @if ($trip->user->id == Auth::id())
+                      <form method="POST" action="{{route('trip.destroy', compact('trip'))}}">
+                          @method('delete')
+                          @csrf
+                          <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>  
+                      <a href="{{route('trip.edit', compact('trip'))}}" class="btn detail-button my-5">Edit</a>
+                    @endif
+                    <a href="{{route('trip.index')}}" class="btn detail-button my-5">Back to trips</a>
+                  </div>
             </div>
             <div class="col-12 col-md-7 tc-second">
                 <h3 class="tc-accent">{{$trip->destination}}</h3>

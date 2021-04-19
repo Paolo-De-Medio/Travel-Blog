@@ -13,16 +13,17 @@
                     <img src="{{Storage::url($article->img)}}" class="card-img" alt="...">
                     <div class="card-img-overlay"></div>
                   </div>
-                  <a href="{{route('article.index')}}" class="btn detail-button my-5">Back to articles</a>
-                  @if ($article->user->id == Auth::id())
-                    <a href="{{route('article.edit', compact('article'))}}" class="btn detail-button my-5">Edit</a>
+                  <div class="d-flex align-items-center justify-content-between">
+                    @if ($article->user->id == Auth::id())
                     <form method="POST" action="{{route('article.destroy', compact('article'))}}">
                         @method('delete')
                         @csrf
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
-                  @endif
-
+                    <a href="{{route('article.edit', compact('article'))}}" class="btn detail-button my-5">Edit</a>
+                    @endif
+                    <a href="{{route('article.index')}}" class="btn detail-button my-5">Back to articles</a>
+                  </div>
             </div>
             <div class="col-12 col-md-7 tc-second">
                 <h3 class="tc-accent">{{$article->name}}</h3>
